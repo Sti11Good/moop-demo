@@ -1,0 +1,62 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>MooLite — Local LAN Multiplayer (emoji graphics)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div id="topbar">
+    <div id="title">MooLite 🐄 (emoji multiplayer)</div>
+    <div id="controls">WASD / Arrows = move · Left click = harvest/attack/place · Enter = chat</div>
+  </div>
+
+  <div id="game-wrap">
+    <canvas id="game"></canvas>
+
+    <div id="hud">
+      <div id="player-name">
+        <input id="name-input" placeholder="Your name" maxlength="16" />
+        <button id="set-name">Set</button>
+      </div>
+
+      <div id="inventory">
+        <div class="inv-row"><strong>Inventory</strong></div>
+        <div class="inv-row">🌲 Wood: <span id="inv-wood">0</span></div>
+        <div class="inv-row">🪨 Stone: <span id="inv-stone">0</span></div>
+        <div class="inv-row">🍓 Food: <span id="inv-food">0</span></div>
+      </div>
+
+      <div id="actions">
+        <button id="build-wall">Place Wall 🧱 (cost 5 wood)</button>
+        <button id="build-home">Place Camp 🏠 (cost 10 wood /5 stone)</button>
+      </div>
+
+      <div id="minimap-wrap">
+        <canvas id="minimap" width="160" height="160"></canvas>
+      </div>
+
+      <div id="scoreboard">
+        <strong>Players</strong>
+        <div id="players-list"></div>
+      </div>
+
+      <div id="chat">
+        <div id="chat-log"></div>
+        <form id="chat-form">
+          <input id="chat-input" placeholder="Say something..." maxlength="200" />
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer">
+    <a href="/README.md" target="_blank">Readme / LAN instructions</a>
+  </div>
+
+  <script src="/script.js"></script>
+</body>
+</html>
