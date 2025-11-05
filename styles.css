@@ -1,0 +1,40 @@
+/* styles.css */
+:root{
+  --bg:#0b2b36;
+  --panel:#112f33cc;
+  --accent:#ffd166;
+  --text:#e6f6f6;
+  --muted:#a9c0c2;
+}
+*{box-sizing:border-box;font-family:system-ui,Segoe UI,Roboto,Arial,sans-serif}
+html,body{height:100%;margin:0;background:linear-gradient(180deg,#05282b 0%, #06373a 100%);color:var(--text)}
+#topbar{display:flex;justify-content:space-between;padding:8px 16px;align-items:center;background:rgba(0,0,0,0.15)}
+#title{font-weight:700}
+#game-wrap{position:relative;height:calc(100% - 92px);display:flex}
+canvas#game{flex:1;background:linear-gradient(180deg,#0b3a33,#09322b);display:block}
+#hud{position:absolute;right:8px;top:8px;width:320px;max-width:40%;display:flex;flex-direction:column;gap:8px;pointer-events:none}
+#hud > *{pointer-events:auto;background:var(--panel);padding:8px;border-radius:8px;color:var(--text);box-shadow:0 4px 12px rgba(0,0,0,0.4)}
+#player-name{display:flex;gap:8px;align-items:center}
+#player-name input{flex:1;padding:6px;border-radius:6px;border:none;background:#052a2a;color:var(--text)}
+#player-name button{padding:6px 8px;border-radius:6px;border:none;background:var(--accent);cursor:pointer}
+#inventory .inv-row{margin:4px 0}
+#actions{display:flex;gap:8px}
+#actions button{flex:1;padding:6px;border-radius:6px;border:none;background:#0a8f6b;color:white;cursor:pointer}
+#minimap-wrap{width:160px;height:160px}
+#minimap{width:100%;height:100%;border-radius:6px;background:#041a1a;border:2px solid rgba(255,255,255,0.04)}
+#scoreboard{max-height:200px;overflow:auto}
+#players-list{font-size:13px}
+#chat{display:flex;flex-direction:column;gap:6px}
+#chat-log{height:120px;overflow:auto;background:rgba(0,0,0,0.08);padding:6px;border-radius:6px}
+#chat-log .msg{margin:2px 0;font-size:13px}
+#chat-form{display:flex;gap:6px}
+#chat-form input{flex:1;padding:6px;border-radius:6px;border:none;background:#052a2a;color:var(--text)}
+#chat-form button{padding:6px;border-radius:6px;border:none;background:#126a6b;color:white;cursor:pointer}
+#footer{position:fixed;left:12px;bottom:8px;color:var(--muted);font-size:13px}
+.player-label{font-size:14px;text-align:center}
+.health-bar{height:6px;background:#333;border-radius:4px;overflow:hidden}
+.health-fill{height:100%;background:linear-gradient(90deg,#ff6b6b,#ffcb6b)}
+@media (max-width:900px){
+  #hud{position:static;width:100%;flex-direction:row;flex-wrap:wrap;padding:8px}
+  canvas#game{height:60vh}
+}
